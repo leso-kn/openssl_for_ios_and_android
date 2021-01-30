@@ -98,6 +98,7 @@ function configure_make() {
 
     elif [[ "${ARCH}" == "arm64" ]]; then
 
+        patch -p1 crypto/poly1305/asm/poly1305-armv8.pl < "../../poly1305-armv8a.patch"
         ./Configure android-arm64 --prefix="${PREFIX_DIR}"
 
     else

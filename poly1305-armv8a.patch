@@ -1,0 +1,15 @@
+diff --git a/crypto/poly1305/asm/poly1305-armv8.pl b/crypto/poly1305/asm/poly1305-armv8.pl
+index 6c6c9bb..aa63026 100755
+--- a/crypto/poly1305/asm/poly1305-armv8.pl
++++ b/crypto/poly1305/asm/poly1305-armv8.pl
+@@ -60,6 +60,10 @@ $code.=<<___;
+ .globl	poly1305_blocks
+ .globl	poly1305_emit
+ 
++.hidden poly1305_blocks
++.hidden poly1305_emit
++.hidden OPENSSL_armcap_P
++
+ .globl	poly1305_init
+ .type	poly1305_init,%function
+ .align	5
